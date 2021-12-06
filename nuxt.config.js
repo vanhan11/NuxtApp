@@ -55,7 +55,10 @@ module.exports = {
 }
 export default {
     modules: [
-      '@nuxtjs/axios'
+        '@nuxtjs/axios'
+    ],
+    plugins:[
+        '@plugins/vuetify'
     ],
   
     axios: {
