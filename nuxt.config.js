@@ -24,6 +24,16 @@ module.exports = {
         /*
          ** Run ESLint on save
          */
+
+        // FOR GET API
+        // modules:[
+        //     '@nuxtjs/axios',
+        //     '@nuxtjs/auth',
+        // ],
+        // plugins:[
+        //     '@/plugins/axios.js'
+        // ],
+
         buildModules: [
             // Simple usage
             '@nuxtjs/vuetify',
@@ -43,3 +53,25 @@ module.exports = {
         }
     }
 }
+export default {
+    modules: [
+      '@nuxtjs/axios'
+    ],
+  
+    axios: {
+      baseURL: 'http://localhost:4000', // Used as fallback if no runtime config is provided
+    },
+  
+    publicRuntimeConfig: {
+      axios: {
+        browserBaseURL: process.env.BROWSER_BASE_URL
+      }
+    },
+  
+    privateRuntimeConfig: {
+      axios: {
+        baseURL: process.env.BASE_URL
+      }
+    },
+  }
+  
